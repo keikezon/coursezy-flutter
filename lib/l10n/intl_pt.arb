@@ -1,0 +1,12 @@
+{
+  "@@locale": "pt",
+  "helloWorld": "Olá Mundo",
+  "greeting": "Olá {name}",
+  "login": "Log In",
+  "email": "Email",
+  "password": "Senha",
+  "logout": "Sair",
+  "continueBtn": "continuar",
+  "loginTitle": "Insira seus dados de login para acessar sua conta",
+  "forgot": "esqueci"
+}
