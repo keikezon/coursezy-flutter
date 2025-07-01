@@ -1,4 +1,3 @@
-import 'package:coursezy/shared/styles/colors.dart';
 import 'package:coursezy/shared/styles/text.dart';
 import 'package:flutter/material.dart';
 
