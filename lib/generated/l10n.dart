@@ -108,6 +108,41 @@ class S {
   String get forgot {
     return Intl.message('forgot', name: 'forgot', desc: '', args: []);
   }
+
+  /// `New Account`
+  String get newAccount {
+    return Intl.message('New Account', name: 'newAccount', desc: '', args: []);
+  }
+
+  /// `Start by entering your email address below.`
+  String get newAccountTitle {
+    return Intl.message(
+      'Start by entering your email address below.',
+      name: 'newAccountTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `show`
+  String get show {
+    return Intl.message('show', name: 'show', desc: '', args: []);
+  }
+
+  /// `hide`
+  String get hide {
+    return Intl.message('hide', name: 'hide', desc: '', args: []);
+  }
+
+  /// `Already have an account?`
+  String get hasAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'hasAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

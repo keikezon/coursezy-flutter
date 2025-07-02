@@ -28,12 +28,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "forgot": MessageLookupByLibrary.simpleMessage("esqueci"),
     "greeting": m0,
+    "hasAccount": MessageLookupByLibrary.simpleMessage("Já tem uma conta?"),
     "helloWorld": MessageLookupByLibrary.simpleMessage("Olá Mundo"),
+    "hide": MessageLookupByLibrary.simpleMessage("esconder"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "loginTitle": MessageLookupByLibrary.simpleMessage(
       "Insira seus dados de login para acessar sua conta",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("Sair"),
+    "newAccount": MessageLookupByLibrary.simpleMessage("Nova conta"),
+    "newAccountTitle": MessageLookupByLibrary.simpleMessage(
+      "Comece inserindo seu endereço de e-mail abaixo.",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Senha"),
+    "show": MessageLookupByLibrary.simpleMessage("mostrar"),
   };
 }

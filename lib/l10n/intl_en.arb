@@ -8,5 +8,10 @@
   "logout": "Logout",
   "continueBtn": "continue",
   "loginTitle": "Enter your login details to access your account",
-  "forgot": "forgot"
+  "forgot": "forgot",
+  "newAccount": "New Account",
+  "newAccountTitle": "Start by entering your email address below.",
+  "show": "show",
+  "hide": "hide",
+  "hasAccount": "Already have an account?"
 }

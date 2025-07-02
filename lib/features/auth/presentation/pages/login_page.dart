@@ -5,6 +5,7 @@ import 'package:coursezy/shared/widgets/custom_button.dart';
 import 'package:coursezy/shared/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../providers/auth_provider.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
@@ -36,7 +37,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: AppColor.bluePrimary),
           onPressed: () {
-            // handle the press
+            context.pop();
           },
         ),
       ),

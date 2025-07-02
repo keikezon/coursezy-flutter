@@ -1,16 +1,19 @@
 // app.dart
+import 'package:coursezy/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:flutter/material.dart';
-import 'features/auth/presentation/pages/login_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
+import 'router.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       locale: const Locale('pt', 'BR'),
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -20,7 +23,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       title: 'Coursezy',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginPage(),
+      builder: (context, child) => child!,
     );
   }
 }

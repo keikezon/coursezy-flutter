@@ -28,12 +28,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "forgot": MessageLookupByLibrary.simpleMessage("forgot"),
     "greeting": m0,
+    "hasAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account?",
+    ),
     "helloWorld": MessageLookupByLibrary.simpleMessage("Hello World"),
+    "hide": MessageLookupByLibrary.simpleMessage("hide"),
     "login": MessageLookupByLibrary.simpleMessage("Log In"),
     "loginTitle": MessageLookupByLibrary.simpleMessage(
       "Enter your login details to access your account",
     ),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "newAccount": MessageLookupByLibrary.simpleMessage("New Account"),
+    "newAccountTitle": MessageLookupByLibrary.simpleMessage(
+      "Start by entering your email address below.",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "show": MessageLookupByLibrary.simpleMessage("show"),
   };
 }

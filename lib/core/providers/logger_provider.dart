@@ -5,7 +5,7 @@ final loggerProvider = Provider((ref) => Logger());
 
 class Logger {
   void log(String message) {
-    // Aqui você poderia integrar com Firebase Crashlytics, Sentry, etc.
+    // Integrar com Firebase Crashlytics, Sentry, etc.
     debugPrint('[LOG]: $message');
   }
 }

@@ -31,4 +31,9 @@ class TextStyles {
     fontFamily: 'Gilroy-Bold',
     fontSize: 16,
   );
+
+  static TextStyle gilroyRegular = TextStyle(
+    fontFamily: 'Gilroy-Regular',
+    fontSize: 20,
+  );
 }
