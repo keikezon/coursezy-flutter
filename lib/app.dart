@@ -1,5 +1,4 @@
 // app.dart
-import 'package:coursezy/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';

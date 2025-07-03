@@ -143,6 +143,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Create Password`
+  String get newPassword {
+    return Intl.message(
+      'Create Password',
+      name: 'newPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your password must have at least one symbol & 8 or more characters.`
+  String get newPasswordTitle {
+    return Intl.message(
+      'Your password must have at least one symbol & 8 or more characters.',
+      name: 'newPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fill all fields`
+  String get fillAllFields {
+    return Intl.message(
+      'Fill all fields',
+      name: 'fillAllFields',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

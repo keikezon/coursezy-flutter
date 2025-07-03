@@ -10,8 +10,11 @@
   "loginTitle": "Insira seus dados de login para acessar sua conta",
   "forgot": "esqueci",
   "newAccount": "Nova conta",
-  "newAccountTitle": "Comece inserindo seu endereço de e-mail abaixo.",
+  "newAccountTitle": "Comece inserindo seu endereço de email abaixo.",
   "show": "mostrar",
   "hide": "esconder",
-  "hasAccount": "Já tem uma conta?"
+  "hasAccount": "Já tem uma conta?",
+  "newPassword": "Criar senha",
+  "newPasswordTitle": "Sua senha deve ter pelo menos um símbolo e 8 ou mais caracteres.",
+  "fillAllFields": "Preencha os campos necessários"
 }

@@ -13,5 +13,8 @@
   "newAccountTitle": "Start by entering your email address below.",
   "show": "show",
   "hide": "hide",
-  "hasAccount": "Already have an account?"
+  "hasAccount": "Already have an account?",
+  "newPassword": "Create Password",
+  "newPasswordTitle": "Your password must have at least one symbol & 8 or more characters.",
+  "fillAllFields": "Fill all fields"
 }

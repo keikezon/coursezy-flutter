@@ -24,6 +24,16 @@ class AuthController extends StateNotifier<AsyncValue<UserEntity?>> {
     }
   }
 
+  Future<void> create(String email, String password) async {
+    state = const AsyncValue.loading();
+    try {
+      final user = await _repository.create(email, password);
+      state = AsyncValue.data(user);
+    } catch (e, st) {
+      state = AsyncValue.error(e, st);
+    }
+  }
+
   Future<void> logout() async {
     await _repository.logout();
     state = const AsyncValue.data(null);

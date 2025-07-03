@@ -32,6 +32,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     return Scaffold(
       backgroundColor: AppColor.backgroundPrimary,
       appBar: AppBar(
+        centerTitle: true,
         title: Text(S.of(context).login, style: TextStyles.gilroyBold),
         backgroundColor: AppColor.backgroundPrimary,
         leading: IconButton(

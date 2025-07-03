@@ -10,6 +10,12 @@ class AuthRepository {
     return _user?.toEntity();
   }
 
+  Future<UserEntity?> create(String email, String password) async {
+    await Future.delayed(const Duration(seconds: 1)); // simulação
+    _user = UserModel(id: '1', email: email);
+    return _user?.toEntity();
+  }
+
   Future<void> logout() async {
     _user = null;
   }
