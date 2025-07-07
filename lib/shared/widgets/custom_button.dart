@@ -34,9 +34,7 @@ class CustomButton extends StatelessWidget {
           foregroundColor: AppColor.white,
           textStyle: TextStyles.gilroyBold16,
         ),
-        onPressed: () async {
-          onPressed();
-        },
+        onPressed: onPressed,
         child: Stack(
           alignment: Alignment.center,
           children: [

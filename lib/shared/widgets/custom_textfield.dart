@@ -22,6 +22,12 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       validator: validator,
+      errorBuilder:
+          (context, errorText) => Container(
+            padding: const EdgeInsets.only(top: 0, bottom: 0),
+            margin: const EdgeInsets.only(top: 0, bottom: 0),
+            child: Text(errorText, style: TextStyles.errorField),
+          ),
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         contentPadding: const EdgeInsets.all(20),

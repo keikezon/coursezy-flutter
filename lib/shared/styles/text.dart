@@ -36,4 +36,10 @@ class TextStyles {
     fontFamily: 'Gilroy-Regular',
     fontSize: 20,
   );
+
+  static TextStyle errorField = TextStyle(
+    fontFamily: 'Gilroy-Regular',
+    fontSize: 14,
+    color: AppColor.red,
+  );
 }
