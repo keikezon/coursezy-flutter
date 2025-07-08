@@ -16,5 +16,6 @@
   "hasAccount": "Already have an account?",
   "newPassword": "Create Password",
   "newPasswordTitle": "Your password must have at least one symbol & 8 or more characters.",
-  "fillAllFields": "Fill all fields"
+  "fillAllFields": "Fill all fields",
+  "home": "Home"
 }

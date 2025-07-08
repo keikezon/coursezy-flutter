@@ -9,6 +9,8 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final Widget? icon;
+  final bool? isLoading;
+  final bool? enable;
 
   const CustomButton({
     required this.label,
@@ -17,6 +19,8 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.height = 65,
     this.icon,
+    this.isLoading = false,
+    this.enable = true,
     super.key,
   });
 
@@ -34,30 +38,52 @@ class CustomButton extends StatelessWidget {
           foregroundColor: AppColor.white,
           textStyle: TextStyles.gilroyBold16,
         ),
-        onPressed: onPressed,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Center(
-              child: Text(label.toUpperCase(), style: TextStyles.gilroyBold16),
-            ),
-            showIcon == true
-                ? icon ??
-                    Positioned(
-                      right: 0,
-                      height: 30,
-                      width: 30,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: AppColor.blueButton,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(Icons.arrow_forward, color: AppColor.white),
+        onPressed: enable! ? onPressed : null,
+        child:
+            isLoading!
+                ? SizedBox(
+                  width: 16,
+                  height: 16,
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                    strokeWidth: 2,
+                  ),
+                )
+                : Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Center(
+                      child: Text(
+                        label.toUpperCase(),
+                        style: TextStyles.gilroyBold16,
                       ),
-                    )
-                : Container(),
-          ],
-        ),
+                    ),
+                    showIcon == true
+                        ? icon ??
+                            Positioned(
+                              right: 0,
+                              height: 30,
+                              width: 30,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color:
+                                      enable!
+                                          ? AppColor.blueButton
+                                          : AppColor.disabledBackground,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.arrow_forward,
+                                  color:
+                                      enable!
+                                          ? AppColor.white
+                                          : AppColor.disabledForeground,
+                                ),
+                              ),
+                            )
+                        : Container(),
+                  ],
+                ),
       ),
     );
   }

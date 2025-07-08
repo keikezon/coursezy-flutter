@@ -1,3 +1,4 @@
+import 'package:coursezy/features/auth/domain/user_entity.dart';
 import 'package:coursezy/features/auth/presentation/validators/auth_validators.dart';
 import 'package:coursezy/generated/l10n.dart';
 import 'package:coursezy/router.dart';
@@ -22,6 +23,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   var finalStep = false;
+  var _isLoading = false;
 
   void _continueStep1() {
     if (_formKey.currentState!.validate() == true) {
@@ -33,10 +35,12 @@ class _SignInPageState extends ConsumerState<SignInPage> {
 
   void _continueStep2() async {
     if (_formKey.currentState!.validate()) {
+      setState(() {
+        _isLoading = true;
+      });
       final email = _emailController.text;
       final password = _passwordController.text;
       await ref.read(authProvider.notifier).create(email, password);
-      router.push('/login');
     }
   }
 
@@ -48,8 +52,29 @@ class _SignInPageState extends ConsumerState<SignInPage> {
     });
   }
 
+  void _providerValidation() {
+    ref.listen<AsyncValue<UserEntity?>>(authProvider, (previous, next) {
+      next.when(
+        data: (user) {
+          if (user != null) {
+            // Navigate to home page if user is logged in
+            router.push('/home');
+          }
+        },
+        loading: () => Center(child: CircularProgressIndicator()),
+        error: (error, stack) {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(error.toString())));
+        },
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    _providerValidation();
+
     return Scaffold(
       backgroundColor: AppColor.backgroundPrimary,
       appBar: AppBar(
@@ -63,22 +88,22 @@ class _SignInPageState extends ConsumerState<SignInPage> {
           icon: const Icon(Icons.arrow_back, color: AppColor.bluePrimary),
           onPressed: () {
             if (!finalStep) {
-              if (context.canPop()) {
-                context.pop();
+              if (router.canPop()) {
+                router.pop();
               } else {
                 setState(() {
                   finalStep = false;
                   _emailController.clear();
                   _passwordController.clear();
                 });
-                context.push('/login');
+                router.push('/home');
               }
             } else {
               setState(() {
                 finalStep = false;
                 _passwordController.clear();
               });
-              context.pushReplacement('/sign-in');
+              router.pushReplacement('/sign-in');
             }
           },
         ),
@@ -145,7 +170,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                       style: TextStyles.gilroyRegular,
                     ),
                     GestureDetector(
-                      onTap: () => context.push('/login'),
+                      onTap: () => router.push('/login'),
                       child: Text(
                         S.of(context).login.toUpperCase(),
                         style: TextStyles.gilroyBold16.copyWith(
@@ -158,6 +183,8 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                       label: S.of(context).continueBtn,
                       onPressed: !finalStep ? _continueStep1 : _continueStep2,
                       showIcon: true,
+                      isLoading: _isLoading,
+                      enable: !_isLoading,
                     ),
                   ],
                 ),

@@ -8,4 +8,6 @@ class AppColor {
   static const Color grayPrimary = Color(0xFF344356);
   static const Color blueButton = Color(0xFF3D56F0);
   static const Color red = Colors.redAccent;
+  static const Color disabledBackground = Color(0xFFE0E0E0);
+  static const Color disabledForeground = Color(0xFF757575);
 }

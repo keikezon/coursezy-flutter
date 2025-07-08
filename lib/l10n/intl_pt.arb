@@ -16,5 +16,6 @@
   "hasAccount": "Já tem uma conta?",
   "newPassword": "Criar senha",
   "newPasswordTitle": "Sua senha deve ter pelo menos um símbolo e 8 ou mais caracteres.",
-  "fillAllFields": "Preencha os campos necessários"
+  "fillAllFields": "Preencha os campos necessários",
+  "home": "Home"
 }
